@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400&family=Source+Sans+3:wght@200;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
+  line-height: 1.2em;
+}
