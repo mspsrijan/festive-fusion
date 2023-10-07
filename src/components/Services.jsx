@@ -4,7 +4,7 @@ const Services = ({ services }) => {
   return (
     <div
       id="services"
-      className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-10 lg:py-16 "
+      className="max-w-7xl mx-auto px-5 py-10 lg:py-16"
       data-aos="zoom-in"
     >
       <div className="flex flex-col gap-3 mx-auto text-center max-w-[700px] mb-16">
