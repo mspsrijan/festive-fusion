@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Footer from "../components/Footer";
 
 function Root() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function Root() {
     <>
       <Header></Header>
       <Outlet></Outlet>
+      <Footer></Footer>
     </>
   );
 }
