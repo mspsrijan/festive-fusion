@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Wedding Wonderland",
+    "image": "https://i.ibb.co/yk9KWXN/Festive-Fusion-Wedding.jpg",
+    "price": "$10,000",
+    "short_description": "Crafting the wedding of your dreams with love, elegance, and attention to every detail.",
+    "long_description": "At Wedding Wonderland, we specialize in creating magical weddings that reflect your unique love story. Our dedicated team of planners and designers works closely with you to bring your vision to life. From stunning floral arrangements to exquisite cuisine, we meticulously craft every aspect of your special day. Let us turn your dreams into a reality and create memories that will last a lifetime."
+  },
+  {
+    "id": 2,
+    "name": "Birthday Bash Bonanza",
+    "image": "https://i.ibb.co/ZGKhDKN/Festive-Fusion-Birthday.jpg",
+    "price": "$800",
+    "short_description": "Epic birthday celebrations for all ages, filled with fun, laughter, and unforgettable moments.",
+    "long_description": "Our Birthday Bash Bonanza packages are designed to make your birthday party a true spectacle. Whether you're celebrating a child's first birthday or a milestone year, we have the creativity and expertise to make it extraordinary. From themed decor and entertainment to delicious cakes and party favors, we ensure that every aspect of your celebration is a perfect reflection of your personality and style."
+  },
+  {
+    "id": 3,
+    "name": "Anniversary Affair",
+    "image": "https://i.ibb.co/tXJNQYS/Festive-Fusion-Anniversary.jpg",
+    "price": "$1,500",
+    "short_description": "Honoring your years of love and commitment with a romantic and memorable anniversary celebration.",
+    "long_description": "Celebrate your milestone with an Anniversary Affair that captures the essence of your journey together. Whether you're marking your first year or a golden anniversary, we create an atmosphere of pure romance and nostalgia. Our team curates intimate settings, plans heartfelt surprises, and ensures every detail, from the music to the menu, is infused with your unique love story. Let us help you celebrate a lifetime of love."
+  },
+  {
+    "id": 4,
+    "name": "Engagement Elegance",
+    "image": "https://i.ibb.co/9nsM1J9/Festive-Fusion-Engagement.jpg",
+    "price": "$2,000",
+    "short_description": "Crafting the perfect 'Yes!' moment with impeccable style and heartfelt touches.",
+    "long_description": "Our Engagement Elegance packages are designed to make your proposal an unforgettable experience. We understand the importance of this special moment, and our expert planners will work closely with you to create a proposal that reflects your love story. From breathtaking settings and hidden photographers to personalized touches and surprises, we'll ensure that your 'Yes!' is a memory you'll cherish forever."
+  },
+  {
+    "id": 5,
+    "name": "Retirement Retreat",
+    "image": "https://i.ibb.co/LYHTYx2/Festive-Fusion-Retirement-Party.jpg",
+    "price": "$1,200",
+    "short_description": "A relaxing retirement celebration that marks the end of an era and the beginning of new adventures.",
+    "long_description": "After years of hard work and dedication, it's time to relax and celebrate your retirement. Our Retirement Retreat packages offer a peaceful and enjoyable transition to this exciting new chapter of life. Whether you prefer a quiet gathering with close friends or a lively party with colleagues, we'll plan an event that suits your style and preferences. Let us help you embark on your retirement journey with joy and relaxation."
+  },
+  {
+    "id": 6,
+    "name": "Baby Shower Bliss",
+    "image": "https://i.ibb.co/R3gKtFL/Festive-Fusion-Baby-Shower.jpg",
+    "price": "$500",
+    "short_description": "Welcoming the newest member of your family with a heartwarming and joyous baby shower.",
+    "long_description": "Celebrate the upcoming arrival of your little one with our Baby Shower Bliss packages. We create heartwarming and memorable baby showers filled with love, laughter, and adorable surprises. From enchanting decor and games to delectable treats and thoughtful gifts, our team ensures that every detail is just as special as the bundle of joy you're welcoming into your family. Let us make this moment unforgettable for you and your loved ones."
+  }
+]
