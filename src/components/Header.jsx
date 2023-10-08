@@ -15,6 +15,16 @@ const Header = () => {
       </li>
       <li>
         <NavLink
+          to="/services"
+          className={({ isActive }) =>
+            isActive ? "active text-[#CD5C08]" : ""
+          }
+        >
+          Services
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/about"
           className={({ isActive }) =>
             isActive ? "active text-[#CD5C08]" : ""

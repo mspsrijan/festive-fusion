@@ -5,6 +5,7 @@ import Error from "../components/Error";
 import SingleService from "../pages/SingleService";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
+import Services from "../pages/Services";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("/services.json"),
+      },
+
+      {
+        path: "/services",
+        element: <Services></Services>,
         loader: () => fetch("/services.json"),
       },
 
