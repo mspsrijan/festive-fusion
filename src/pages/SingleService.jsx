@@ -5,8 +5,7 @@ const SingleService = () => {
   const { serviceId } = useParams();
 
   const service = services.find((service) => service.id == serviceId);
-  const { id, image, name, price, short_description, long_description } =
-    service;
+  const { image, name, price, short_description, long_description } = service;
 
   return (
     <div>
