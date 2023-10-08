@@ -85,12 +85,16 @@ const Header = () => {
       </div>
       <div className="navbar-end gap-4">
         <img src="https://i.ibb.co/2FnX2rf/user.png" alt="" className="w-8" />
-        <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
-          Login
-        </button>
-        <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
-          Logout
-        </button>
+        <Link to="/login">
+          <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
+            Login
+          </button>
+        </Link>
+        <Link to="/registration">
+          <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
+            Logout
+          </button>
+        </Link>
       </div>
     </div>
   );
