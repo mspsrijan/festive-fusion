@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   const { id, image, name, price, short_description } = service || {};
   return (
-    <div>
+    <div data-aos="fade-up" data-aos-delay="200">
       <div className="border-[#C1D8C3] rounded-lg shadow">
         <img
           className="rounded-t-lg w-full max-h-60 object-cover"
@@ -11,7 +11,9 @@ const ServiceCard = ({ service }) => {
           alt={name}
         />
         <div className="p-6">
-          <h3 className="mb-2 text-[24px]">{name}</h3>
+          <h3 className="mb-2 text-[22px] font-semibold leading-snug">
+            {name}
+          </h3>
           <p className="mb-3">{short_description}</p>
 
           <div className="flex justify-between items-center mt-6">

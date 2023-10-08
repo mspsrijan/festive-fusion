@@ -20,7 +20,7 @@ const Hero = () => {
   return (
     <div>
       <div
-        className="hero min-h-[550px]"
+        className="hero min-h-[550px] px-5"
         style={{
           backgroundImage: "url(https://i.ibb.co/tBMY4gw/hero-bg.jpg)",
           backgroundSize: "cover",
@@ -29,8 +29,8 @@ const Hero = () => {
         }}
       >
         <div className="text-center text-white">
-          <div className="max-w-[700px]" data-aos="fade-up">
-            <h1 className="mb-5 text-5xl font-bold">
+          <div className="max-w-[800px]" data-aos="fade-in">
+            <h1 className="mb-5 text-4xl lg:text-5xl font-extrabold leading-snug">
               Creating Unforgettable Moments
             </h1>
             <p className="mb-5">
@@ -43,8 +43,8 @@ const Hero = () => {
 
             <button
               onClick={() => scrollToSection("services")}
-              data-aos="fade-in"
-              data-aos-delay="400"
+              data-aos="fade-up"
+              data-aos-delay="200"
               className="px-9 py-4 bg-white text-[#1F2937] rounded-md hover:bg-[#CD5C08] hover:text-white mt-6"
             >
               Our Services

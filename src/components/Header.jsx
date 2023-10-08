@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const menuItems = (
@@ -11,16 +11,6 @@ const Header = () => {
           }
         >
           Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/services"
-          className={({ isActive }) =>
-            isActive ? "active text-[#CD5C08]" : ""
-          }
-        >
-          Services
         </NavLink>
       </li>
       <li>
@@ -72,19 +62,25 @@ const Header = () => {
             {menuItems}
           </ul>
         </div>
-        <a className="">
+        <Link to="/">
           <img
             src="https://i.ibb.co/jDsZ7NZ/festive-fusion-logo.png"
             alt="Festive Fusion"
             className="w-48"
           />
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-10">{menuItems}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end gap-4">
         <img src="https://i.ibb.co/2FnX2rf/user.png" alt="" className="w-8" />
+        <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
+          Login
+        </button>
+        <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
+          Logout
+        </button>
       </div>
     </div>
   );

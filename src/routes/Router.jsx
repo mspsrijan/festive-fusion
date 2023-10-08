@@ -3,6 +3,8 @@ import Root from "../layouts/Root";
 import Home from "../pages/Home";
 import Error from "../components/Error";
 import SingleService from "../pages/SingleService";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,16 @@ const router = createBrowserRouter([
         path: "/services/:serviceId",
         element: <SingleService></SingleService>,
         loader: () => fetch("/services.json"),
+      },
+
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
 
       {

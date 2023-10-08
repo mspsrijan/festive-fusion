@@ -8,9 +8,9 @@ import Footer from "../components/Footer";
 function Root() {
   useEffect(() => {
     AOS.init({
-      offset: 40,
       duration: 600,
       easing: "ease-in-out",
+      once: true,
     });
   }, []);
 
