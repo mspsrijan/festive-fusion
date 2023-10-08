@@ -1,6 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    signInUser(email, password).then().catch();
+  };
+
   return (
     <div>
       <div
@@ -23,14 +34,14 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="bg-gray-50">
+      <div className="bg-gray-50" data-aos="fade-up" data-aos-delay="200">
         <div className="flex flex-col items-center justify-center px-5 py-10 lg:py-16 mx-auto">
           <div className="w-full max-w-md bg-white rounded-lg shadow">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
                 Sign in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6">
+              <form className="space-y-4 md:space-y-6" onSubmit={handleLogin}>
                 <div>
                   <label
                     htmlFor="email"

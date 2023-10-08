@@ -1,5 +1,27 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+
 const Registration = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegistration = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const name = form.get("name");
+    const email = form.get("email");
+    const password = form.get("password");
+    const photo = form.get("photo");
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <div
@@ -21,14 +43,33 @@ const Registration = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-50">
+      <div className="bg-gray-50" data-aos="fade-up" data-aos-delay="200">
         <div className="flex flex-col items-center justify-center px-5 py-10 lg:py-16 mx-auto">
           <div className="w-full max-w-md bg-white rounded-lg shadow">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
                 Create and account
               </h1>
-              <form className="space-y-4 md:space-y-6">
+              <form
+                onSubmit={handleRegistration}
+                className="space-y-4 md:space-y-6"
+              >
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block mb-2 text-sm font-medium"
+                  >
+                    Your email
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    className="text-base bg-gray-50 border border-gray-300 rounded-md focus:border-gray-600 focus:outline-none block w-full p-2.5"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
                 <div>
                   <label
                     htmlFor="email"
