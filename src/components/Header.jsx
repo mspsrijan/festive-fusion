@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
   const menuItems = (
     <>
       <li>
@@ -84,17 +90,27 @@ const Header = () => {
         <ul className="flex gap-10">{menuItems}</ul>
       </div>
       <div className="navbar-end gap-4">
-        <img src="https://i.ibb.co/2FnX2rf/user.png" alt="" className="w-8" />
-        <Link to="/login">
-          <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
-            Login
-          </button>
-        </Link>
-        <Link to="/registration">
-          <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
-            Logout
-          </button>
-        </Link>
+        {user ? (
+          <div className="flex gap-4">
+            <img
+              src="https://i.ibb.co/2FnX2rf/user.png"
+              alt=""
+              className="w-8"
+            />
+            <button
+              onClick={handleSignOut}
+              className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white"
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <Link to="/login">
+            <button className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
