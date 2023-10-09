@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Registration = () => {
   const { createUser } = useContext(AuthContext);
+  const [registerError, setRegisterError] = useState("");
+  const [registrationSuccess, setRegistrationSuccess] = useState("");
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -13,12 +15,30 @@ const Registration = () => {
     const password = form.get("password");
     const photo = form.get("photo");
 
+    if (password.length < 6) {
+      setRegisterError("Password should be at least 6 characters ");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setRegisterError(
+        "Your password should contain atleast one capital letter."
+      );
+      return;
+    } else if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+      setRegisterError(
+        "Your password should contain atleast one special character."
+      );
+      return;
+    }
+
+    setRegistrationSuccess("");
+    setRegisterError("");
+
     createUser(email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
+        setRegistrationSuccess("You have been registered successfully");
       })
       .catch((error) => {
-        console.log(error);
+        setRegisterError(error.message);
       });
   };
 
@@ -59,7 +79,7 @@ const Registration = () => {
                     htmlFor="name"
                     className="block mb-2 text-sm font-medium"
                   >
-                    Your email
+                    Your Name
                   </label>
                   <input
                     type="text"
@@ -116,14 +136,14 @@ const Registration = () => {
                     id="photo"
                     placeholder="https://www.photo.com/your-photo.jpg"
                     className="text-base bg-gray-50 border border-gray-300 rounded-md focus:border-gray-600 focus:outline-none block w-full p-2.5"
-                    required=""
+                    required
                   />
                 </div>
                 <button
                   type="submit"
                   className="w-full text-white bg-[#CD5C08] hover:bg-[#CD5C08]/80 font-medium rounded-md px-5 py-2.5 text-center"
                 >
-                  Sign in
+                  Sign Up
                 </button>
                 <p className="text-base text-center">
                   Already have an account? &nbsp;
@@ -134,6 +154,43 @@ const Registration = () => {
                     Login here
                   </Link>
                 </p>
+                {registerError && (
+                  <div className="alert alert-error text-base">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="stroke-current shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{registerError}</span>
+                  </div>
+                )}
+
+                {registrationSuccess && (
+                  <div className="alert alert-success text-base">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="stroke-current shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{registrationSuccess}</span>
+                  </div>
+                )}
               </form>
             </div>
           </div>

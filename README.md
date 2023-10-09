@@ -16,8 +16,7 @@ Live site link: [https://festive-fusion.web.app](https://festive-fusion.web.app/
 - **Contact**: On this page, we have our contact details like address, phone numbers, emails and social media handles.
   _Please note, You will have to be logged in to view service details._
 
-- **Login/Registration**: As mentioned above, you have to be a registered user to see some contents of our site. You can Login by clicking on the Login button on the navigation bar. If you don't have an account, you can create one by clicking on Sign Up link on the Login page. You can create an account using Email and Password or you can use your Google account to register on our site.
-  \*Please note, You are requested to provide an URL to an image of yourself on the Registration page. It's optional. If you use email and password method to register, you will have to proide a password that
+- **Login/Registration**: As mentioned above, you have to be a registered user to see some contents of our site. You can Login by clicking on the Login button on the navigation bar. If you don't have an account, you can create one by clicking on Sign Up link on the Login page. You can create an account using Email and Password or you can use your Google account to register on our site. Please note, You are requested to provide an URL to an image of yourself on the Registration page. It's optional. If you use email and password method to register, you will have to proide a password that-
   - contains more than 6 characters
   - has a capital letter
-  - has a special character\*
+  - has a special character

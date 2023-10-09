@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
@@ -7,16 +7,26 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const [loginError, setLoginError] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState("");
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+
+    setLoginSuccess("");
+    setLoginError("");
+
     signInUser(email, password)
       .then(() => {
-        navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/login");
+        setLoginSuccess("You have been loggd in successfully");
       })
-      .catch();
+      .catch((error) => {
+        setLoginError(error.message);
+      });
   };
 
   return (
@@ -96,6 +106,43 @@ const Login = () => {
                     Sign up
                   </Link>
                 </p>
+                {loginError && (
+                  <div className="alert alert-error text-base">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="stroke-current shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{loginError}</span>
+                  </div>
+                )}
+
+                {loginSuccess && (
+                  <div className="alert alert-success text-base">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="stroke-current shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>{loginSuccess}</span>
+                  </div>
+                )}
               </form>
             </div>
           </div>
