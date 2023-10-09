@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
   const { createUser } = useContext(AuthContext);
@@ -33,9 +34,16 @@ const Registration = () => {
     setRegistrationSuccess("");
     setRegisterError("");
 
-    createUser(email, password)
-      .then(() => {
+    createUser(name, email, password, photo)
+      .then((res) => {
         setRegistrationSuccess("You have been registered successfully");
+        const user = res.user;
+        return updateProfile(user, {
+          displayName: name,
+          photoURL: photo,
+        }).then(() => {
+          setRegistrationSuccess("You have been registered successfully");
+        });
       })
       .catch((error) => {
         setRegisterError(error.message);

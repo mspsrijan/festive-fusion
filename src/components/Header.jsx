@@ -7,6 +7,7 @@ const Header = () => {
   const handleSignOut = () => {
     logOut().then().catch();
   };
+
   const menuItems = (
     <>
       <li>
@@ -91,12 +92,20 @@ const Header = () => {
       </div>
       <div className="navbar-end gap-4">
         {user ? (
-          <div className="flex gap-4">
-            <img
-              src="https://i.ibb.co/2FnX2rf/user.png"
-              alt=""
-              className="w-8"
-            />
+          <div className="flex gap-4 items-center">
+            {user.photoURL ? (
+              <img
+                src={user.photoURL}
+                alt="User Profile"
+                className="w-10 h-10 rounded-full"
+              />
+            ) : (
+              <img
+                src="https://i.ibb.co/2FnX2rf/user.png"
+                alt="Default User Profile"
+                className="w-8"
+              />
+            )}
             <button
               onClick={handleSignOut}
               className="text-base text-[#CD5C08] border border-[#CD5C08] px-4 py-[5px] rounded-md hover:bg-[#CD5C08] hover:text-white"
